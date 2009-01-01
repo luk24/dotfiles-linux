@@ -19,20 +19,22 @@ brew tap AdoptOpenJDK/openjdk
 brew install --cask adoptopenjdk11
 
 echo "Installing Android SDK..."
-curl https://dl.google.com/android/repository/commandlinetools-mac-8512546_latest.zip -o ${HOME}/cmdlinetools.zip --progress
-unzip ${HOME}/cmdlinetools.zip
-${HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${HOME}/sdk --install "cmdline-tools;latest"
-${HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${HOME}/sdk --install "platform-tools"
-${HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${HOME}/sdk --install "emulator"
-rm -rf ${HOME}/cmdlinetools.zip ${HOME}/cmdline-tools
+curl https://dl.google.com/android/repository/commandlinetools-mac-8512546_latest.zip -o cmdlinetools.zip --progress
+unzip cmdlinetools.zip
+cmdline-tools/bin/sdkmanager --sdk_root=${HOME}/sdk --install "cmdline-tools;latest"
+cmdline-tools/bin/sdkmanager --sdk_root=${HOME}/sdk --install "platform-tools"
+cmdline-tools/bin/sdkmanager --sdk_root=${HOME}/sdk --install "emulator"
+rm -rf cmdlinetools.zip cmdline-tools
 
 echo "Installing fvm tool..."
 brew tap leoafarias/fvm
 brew install fvm
 
 echo "Installing nvm tool..."
+brew install nvm
 
 echo "Installing other tools..."
 brew install \
     gnu-sed \
     findutils \
+    scrcpy \
