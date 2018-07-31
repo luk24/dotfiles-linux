@@ -34,8 +34,13 @@ ask() {
 }
 
 dir=$(pwd)
+system=$(uname -s)
 
-ask "Install packages?" Y && bash ./dependencies.sh
+if [ system = "Linux" ]; then
+   ask "Install packages?" Y && bash ./dependencies.sh
+else
+   ask "Install packages?" Y && bash ./darwin_dependencies.sh
+fi
 
 echo "Link some config"
 ask "Install symlink for .zshrc?" Y && ln -sfn ${dir}/zsh/.zshrc ${HOME}/.zshrc
