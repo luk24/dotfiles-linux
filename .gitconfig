@@ -2,6 +2,9 @@
     name = luk24
     email = luk24.chiu@gmail.com
 
+[core]
+    editor = vim
+
 [alias]
     a = add --all
     c = commit
