@@ -42,6 +42,8 @@ else
    ask "Install packages?" Y && bash ./darwin_dependencies.sh
 fi
 
+ask "Use zsh by default?" Y && chsh -s /bin/zsh
+
 echo "Link some config"
 ask "Install symlink for .gitconfig?" Y && ln -sfn ${dir}/.gitconfig ${HOME}/.gitconfig
 ask "Install symlink for .zshrc?" Y && ln -sfn ${dir}/zsh/.zshrc ${HOME}/.zshrc
