@@ -8,6 +8,11 @@ fi
 
 echo "Installing tools..."
 brew install \
+    bash \
+    bash_completion \
     git \
     vim \
     proxychains-ng \
+    gnupg \
+    coreutils \
+    lzip
