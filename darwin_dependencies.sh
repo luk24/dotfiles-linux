@@ -9,26 +9,20 @@ fi
 echo "Installing tools..."
 brew install \
     bash \
-    bash_completion \
-    brotli \
-    git \
-    lzip \
-    make \
-    minicom \
+    zsh \
+    ccache \
     dateutils \
-    vim \
-    patchelf \
-    proxychains-ng \
-    gnupg \
+    gnupg2 \
     coreutils \
-    lzip
 
-echo "Installing flock"
-brew tap discoteq/discoteq && brew install flock
+brew cask install \
+    squirrel \
 
-echo "Something"
-ln -s /usr/local/bin/lzip /usr/local/bin/lunzip
+#echo "Installing flock"
+#brew tap discoteq/discoteq && brew install flock
+
+#echo "Something"
+#ln -s /usr/local/bin/lzip /usr/local/bin/lunzip
 
 echo "Copy preset apps"
 cp -rf app/NativeDisplayBrightness.app/ ~/Applications/
-cp -rf app/JD-GUI.app/ ~/Applications/

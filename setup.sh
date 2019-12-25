@@ -42,6 +42,20 @@ else
    ask "Install packages?" Y && bash ./darwin_dependencies.sh
 fi
 
+echo "Install oh my zsh"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "Configurate Dracula theme"
+git clone https://github.com/dracula/zsh.git ${dir}/dracula/zsh
+git clone https://github.com/dracula/iterm.git ${dir}/dracula/iterm
+
+
+
 echo "Link some config"
-ask "Install symlink for .gitconfig?" Y && ln -sfn ${dir}/.gitconfig ${HOME}/.gitconfig
-ask "Install symlink for .bash_profile" Y && ln -sfn ${dir}/.bash_profile ${HOME}/.bash_profile
+ln -sfn ${dir}/.gitconfig ${HOME}/.gitconfig
+ln -sfn ${dir}/.bashrc${HOME}/.bashrc
+ln -sfn ${dir}/.zshrc ${HOME}/.zshrc
+ln -sfn ${dir}/dracula/zsh/dracula.zsh-theme ${HOME}/.oh-my-zsh/themes/dracula.zsh-theme
+ln -sfn ${dir}/config/Rime ${HOME}/Library/Rime
+
+
