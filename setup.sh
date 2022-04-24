@@ -45,17 +45,12 @@ fi
 echo "Install oh my zsh"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-echo "Configurate Dracula theme"
-git clone https://github.com/dracula/zsh.git ${dir}/dracula/zsh
-git clone https://github.com/dracula/iterm.git ${dir}/dracula/iterm
-
-
+echo "Configurate powerlevel10k theme"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${dir}/powerlevel10k
 
 echo "Link some config"
 ln -sfn ${dir}/.gitconfig ${HOME}/.gitconfig
-ln -sfn ${dir}/.bashrc${HOME}/.bashrc
 ln -sfn ${dir}/.zshrc ${HOME}/.zshrc
-ln -sfn ${dir}/dracula/zsh/dracula.zsh-theme ${HOME}/.oh-my-zsh/themes/dracula.zsh-theme
-ln -sfn ${dir}/config/Rime ${HOME}/Library/Rime
+ln -sfn ${dir}/powerlevel10k ${HOME}/.oh-my-zsh/custom/themes/powerlevel10k
 
 
