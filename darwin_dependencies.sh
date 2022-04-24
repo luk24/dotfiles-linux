@@ -8,6 +8,8 @@ fi
 echo "Installing tools..."
 brew install \
     zsh-completions \
+    zsh-autosuggestions \
+    zsh-syntax-highlighting \
 
-brew cask install \
-    squirrel \
+# brew cask install \
+ 
