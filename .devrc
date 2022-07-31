@@ -1,0 +1,20 @@
+# gnu tools
+# PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+# zsh-completions config
+compaudit | xargs chmod g-w
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  autoload -Uz compinit
+  compinit
+fi
+ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
+[ -s /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]
+
+# android sdk
+PATH="${HOME}/sdk/cmdline-tools/latest/bin:$PATH"
+PATH="${HOME}/sdk/platform-tools:$PATH"
+
+# nvm tool
+NVM_DIR=${HOME}/nvm 
+[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"

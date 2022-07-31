@@ -112,4 +112,4 @@ source $ZSH/oh-my-zsh.sh
 
 # Configuarate environment
 ZSH_DISABLE_COMPFIX="true"
-source ${HOME}/.dotfiles/.env
+source ${HOME}/.dotfiles/.devrc

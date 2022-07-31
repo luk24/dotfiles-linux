@@ -1,4 +1,4 @@
-source ${HOME}/.env
+source ${HOME}/.devrc
 
 shopt -s cdspell
 shopt -s cmdhist
