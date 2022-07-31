@@ -46,11 +46,8 @@ echo "Install oh my zsh"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Configurate powerlevel10k theme"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${dir}/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-echo "Link some config"
-ln -sfn ${dir}/.gitconfig ${HOME}/.gitconfig
+echo "Configurate links"
 ln -sfn ${dir}/.zshrc ${HOME}/.zshrc
-ln -sfn ${dir}/powerlevel10k ${HOME}/.oh-my-zsh/custom/themes/powerlevel10k
-
-
+ln -sfn ${dir}/.gitconfig ${HOME}/.gitconfig
