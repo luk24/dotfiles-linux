@@ -51,3 +51,4 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 echo "Configurate links"
 ln -sfn ${dir}/.zshrc ${HOME}/.zshrc
 ln -sfn ${dir}/.gitconfig ${HOME}/.gitconfig
+ln -sfn ${dir}/.p10k.zsh ${HOME}/.p10k.zsh

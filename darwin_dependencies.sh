@@ -19,7 +19,7 @@ brew tap AdoptOpenJDK/openjdk
 brew install --cask adoptopenjdk11
 
 echo "Installing Android SDK..."
-curl https://dl.google.com/android/repository/commandlinetools-mac-8512546_latest.zip -o cmdlinetools.zip --progress
+curl https://dl.google.com/android/repository/commandlinetools-mac-8512546_latest.zip -o cmdlinetools.zip
 unzip cmdlinetools.zip
 cmdline-tools/bin/sdkmanager --sdk_root=${HOME}/sdk --install "cmdline-tools;latest"
 cmdline-tools/bin/sdkmanager --sdk_root=${HOME}/sdk --install "platform-tools"
@@ -38,3 +38,11 @@ brew install \
     gnu-sed \
     findutils \
     scrcpy \
+
+echo "install applications..."
+brew install --cask \
+    iterm2 \
+    google-chrome \
+    visual-studio-code \
+    android-studio \
+    

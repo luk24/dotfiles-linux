@@ -108,8 +108,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ${HOME}/.dotfiles/.p10k.zsh ]] || source ${HOME}/.dotfiles/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Configuarate environment
 ZSH_DISABLE_COMPFIX="true"
-source ${HOME}/.dotfiles/.devrc
+source ${HOME}/dotfiles/.devrc
