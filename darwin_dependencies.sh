@@ -23,6 +23,7 @@ curl https://dl.google.com/android/repository/commandlinetools-mac-8512546_lates
 unzip cmdlinetools.zip
 cmdline-tools/bin/sdkmanager --sdk_root=${HOME}/sdk --install "cmdline-tools;latest"
 cmdline-tools/bin/sdkmanager --sdk_root=${HOME}/sdk --install "platform-tools"
+cmdline-tools/bin/sdkmanager --sdk_root=${HOME}/sdk --install "platforms;android-32"
 cmdline-tools/bin/sdkmanager --sdk_root=${HOME}/sdk --install "emulator"
 rm -rf cmdlinetools.zip cmdline-tools
 
