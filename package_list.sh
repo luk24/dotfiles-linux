@@ -26,3 +26,7 @@ brew install \
     gnu-sed \
     findutils \
     scrcpy \
+
+echo "Installing fonts..."
+brew tap homebrew/cask-fonts
+brew install font-monaspace
