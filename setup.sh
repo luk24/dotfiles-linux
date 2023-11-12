@@ -42,4 +42,4 @@ ask "Install oh my zsh?" Y && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh
 
 echo "Configurate links"
 ask "Configuate zshrc?" Y && echo -e "\nsource ${HOME}/dotfiles/.devrc" >> ${HOME}/.zshrc
-ask "Configuate gitconfig?" Y && ln -sfn ${dir}/.gitconfig ${HOME}/.gitconfig
+ask "Configuate gitconfig?" Y && ln -sfn ${dir}/gitconfig ${HOME}/.gitconfig
