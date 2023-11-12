@@ -36,19 +36,10 @@ ask() {
 dir=$(pwd)
 system=$(uname -s)
 
-if [ system = "Linux" ]; then
-   ask "Install packages?" Y && bash ./dependencies.sh
-else
-   ask "Install packages?" Y && bash ./darwin_dependencies.sh
-fi
-
-echo "Install oh my zsh"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-echo "Configurate powerlevel10k theme"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+echo "Install applications"
+ask "Install packages?" Y && bash ./package_list.sh
+ask "Install oh my zsh?" Y && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Configurate links"
-ln -sfn ${dir}/.zshrc ${HOME}/.zshrc
-ln -sfn ${dir}/.gitconfig ${HOME}/.gitconfig
-ln -sfn ${dir}/.p10k.zsh ${HOME}/.p10k.zsh
+ask "Configuate zshrc?" Y && echo -e "\nsource ${HOME}/dotfiles/.devrc" >> ${HOME}/.zshrc
+ask "Configuate gitconfig?" Y && ln -sfn ${dir}/.gitconfig ${HOME}/.gitconfig

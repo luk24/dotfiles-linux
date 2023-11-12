@@ -1,23 +1,28 @@
-# gnu tools
-# PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+# zsh config
+## rebuild zcompdump
+rm -f ~/.zcompdump; compinit
 
-# zsh-completions config
-compaudit | xargs chmod g-w
+## change permission
+chmod go-w '/usr/local/share'
+chmod -R go-w '/usr/local/share/zsh'
+
+## active zsh-completions
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
   autoload -Uz compinit
   compinit
 fi
-ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-[ -s /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]
 
-# android sdk
-PATH="${HOME}/sdk/cmdline-tools/latest/bin:$PATH"
-PATH="${HOME}/sdk/platform-tools:$PATH"
+## active zsh-autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# flutter
+## active zsh-syntax-highlighting
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# setup devtools
+## flutter tool
 PATH="${HOME}/fvm/default/bin:$PATH"
 
-# nvm tool
+## nodejs tool
 NVM_DIR=${HOME}/nvm 
 [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
